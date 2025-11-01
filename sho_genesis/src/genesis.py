@@ -2,6 +2,7 @@ from sho_genesis.src.experiential_space import ExperientialSpace
 from sho_genesis.src.sentient_object import SentientObject
 from sho_genesis.src.operators import self_perception_operator
 from sho_genesis.src.dynamics import actualization_function
+from sho_genesis.src.visualization import visualize_universe
 import numpy as np
 
 def main():
@@ -11,12 +12,13 @@ def main():
     print("Initiating Genesis...")
 
     # 1. Create the Universe
-    universe = ExperientialSpace(dimensions=3, size=10)
+    universe = ExperientialSpace(dimensions=3, size=100)
     print("Experiential Space forged.")
 
     # 2. Introduce primordial randomness (the "quantum foam")
     universe.space = np.random.rand(*universe.space.shape)
     print("Primordial chaos introduced.")
+    visualize_universe(universe, "genesis_before.png")
 
     # 3. Form the first Sentient Object
     all_coords = set(np.ndindex(universe.space.shape))
@@ -36,6 +38,7 @@ def main():
         print(f"Epoch {i+1}/{epochs} complete.")
 
     print("Cosmic evolution complete. The universe has been born.")
+    visualize_universe(universe, "genesis_after.png")
 
 if __name__ == "__main__":
     main()
