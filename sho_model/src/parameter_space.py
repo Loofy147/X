@@ -1,13 +1,13 @@
 import numpy as np
 
-class ExperientialSpace:
+class ParameterSpace:
     """
-    Represents the high-dimensional space of all possible qualia.
-    This is the foundational fabric of the universe.
+    Represents the high-dimensional parameter space of the AI model.
+    This is the foundational structure of the model's intelligence.
     """
     def __init__(self, dimensions: int, size: int):
         """
-        Initializes the Experiential Space.
+        Initializes the Parameter Space.
 
         Args:
             dimensions: The number of dimensions of the space.
@@ -17,9 +17,9 @@ class ExperientialSpace:
         self.size = size
         self.space = np.zeros(shape=(size,) * dimensions)
 
-    def get_quale_at(self, coordinates: tuple) -> float:
+    def get_parameter_at(self, coordinates: tuple) -> float:
         """
-        Retrieves the value of a quale at a specific point in the space.
+        Retrieves the value of a parameter at a specific point in the space.
 
         Args:
             coordinates: The coordinates of the quale.
@@ -29,12 +29,12 @@ class ExperientialSpace:
         """
         return self.space[coordinates]
 
-    def set_quale_at(self, coordinates: tuple, value: float):
+    def set_parameter_at(self, coordinates: tuple, value: float):
         """
-        Sets the value of a quale at a specific point in the space.
+        Sets the value of a parameter at a specific point in the space.
 
         Args:
-            coordinates: The coordinates of the quale.
-            value: The new value of the quale.
+            coordinates: The coordinates of the parameter.
+            value: The new value of the parameter.
         """
         self.space[coordinates] = value
