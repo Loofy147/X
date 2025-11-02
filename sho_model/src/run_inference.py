@@ -31,7 +31,7 @@ def main():
     epochs = 10
     learning_rate = 0.01
     for i in range(epochs):
-        optimization_step(model_space, learning_rate)
+        optimization_step(model_space, learning_rate, structure_preservation_factor=0.9)
         print(f"Optimization epoch {i+1}/{epochs} complete.")
 
     # 5. Decode the output from the same region
